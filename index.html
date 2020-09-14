@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Clicker Game</title>
+</head>
+<body>
+    <div class="column col1 clearfix"> <!--This column contains the click button and current number-->
+        <a href="#" class="button" id="clickButton">click!</a>
+        <h1 class="number" id="number">0</h1>
+    </div>
+
+    <div class="divider clearfix"></div> <!--A divider line between the two columns-->
+
+    <div class="column col2 clearfix"> <!--This column contains the store-->
+        <h1>store</h1>
+        <p class="upgrade-click" id="upgrade-click"><a href="#" class="button" id="buy-upgrade-click">Buy</a> Upgrade Click Strength  (cost: <span id="cost-upgrade-click">20</span>) (current level: <span id="current-click-level">1</span>)</p>
+        <p class="auto-clicker" id="auto-clicker"><a href="#" class="button" id="buy-auto-clicker">Buy</a> Auto-Clicker (cost: <span id="cost-auto-clicker">10</span>) (in possession: <span id="inv-auto-clicker">0</span>)</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

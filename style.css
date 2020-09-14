@@ -1,0 +1,98 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+}
+
+.column {
+    width: 45%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* CLICK COLUMN */
+.col1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#clickButton {
+    font-size: 30px;
+    color: #444;
+    border: 3px solid #444;
+}
+.button {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    padding: 3px;
+    text-decoration: none;
+}
+.number {
+    font-size: 50px;
+}
+
+/* DIVIDER */
+.divider {
+    width: 2px;
+    height: 80%;
+    background-color: #777;
+    margin: auto;
+    opacity: 30%;
+}
+
+/* STORE COLUMN */
+.col2 h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+/* Features not yet unlocked are hidden in the store when the game begins.
+After they are unlocked, they get the .reveal class, which will allow them to fade in. */
+.upgrade-click,
+.auto-clicker {
+    display: none;
+}
+.upgrade-click a,
+.auto-clicker a {
+    color: #AAA;
+    border: 3px solid #AAA;
+}
+.reveal {
+    display: block;
+    animation: fadeIn ease .5s;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+.canbuy {
+    color: #444  !important;
+    border: 3px solid #444  !important;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/* Media queries */
+@media (min-width: 800px) {
+    
+}
