@@ -2,7 +2,6 @@ let clickNumber = 0.0; // The current "score"
 let clickStrength = 1; // How much the counter is incremented by when the player clicks the button.
 let autoClickStrength = 0.01; // Automatic clicks per second
 
-
 var upgradeClick = {
     level : 1,
     cost : 20,
@@ -17,13 +16,11 @@ var autoClicker = {
 
 var store = [upgradeClick, autoClicker];
 
+
 // Setting the unlocked content at the beginning of the game.
 let isUpgradeClickUnlocked = false;
 let isAutoClickerUnlocked = false;
 
-document.getElementById("clickButton").addEventListener("click", click);
-document.getElementById("buy-upgrade-click").addEventListener("click", buyUpgradeClick);
-document.getElementById("buy-auto-clicker").addEventListener("click", buyAutoClicker);
 
 /* This is in here to round the clickNumber and avoid the weird Javascript
 decimal rounding stuff that Javascript does... */
@@ -31,6 +28,7 @@ function truncate (num) {
     return Math.trunc(num * Math.pow(10, 1)) / Math.pow(10, 1);
 }
 
+document.getElementById("clickButton").addEventListener("click", click);
 // Increments the click counter when the button is clicked. 
 function click() {
     clickNumber += clickStrength;
@@ -91,7 +89,7 @@ function buyCheck() {
     }
 }
 
-
+document.getElementById("buy-upgrade-click").addEventListener("click", buyUpgradeClick);
 function buyUpgradeClick() {
     if (clickNumber >= upgradeClick.cost) {
         clickNumber = truncate(clickNumber-upgradeClick.cost);
@@ -104,6 +102,7 @@ function buyUpgradeClick() {
     }
 }
 
+document.getElementById("buy-auto-clicker").addEventListener("click", buyAutoClicker);
 function buyAutoClicker() {
     if (clickNumber >= autoClicker.cost) {
         clickNumber = truncate(clickNumber-autoClicker.cost);
