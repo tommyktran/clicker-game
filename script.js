@@ -140,4 +140,3 @@ function buySuperClicker() {
 }
 
 window.setInterval(function(){autoClick()}, 100);
-
