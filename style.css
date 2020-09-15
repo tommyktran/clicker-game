@@ -52,6 +52,10 @@ body {
     text-align: center;
     font-size: 40px;
 }
+.col2 {
+    /*Extra spacing to look nicer on smaller screens*/
+    line-height: 1.6;
+}
 
 /* Features not yet unlocked are hidden in the store when the game begins.
 After they are unlocked, they get the .reveal class, which will allow them to fade in. */
