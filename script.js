@@ -14,12 +14,19 @@ var autoClicker = {
     id: "buy-auto-clicker"
 }
 
-var store = [upgradeClick, autoClicker];
+var superClicker = {
+    inv : 0,
+    cost : 100,
+    id: "buy-super-clicker"
+}
+
+var store = [upgradeClick, autoClicker, superClicker];
 
 
 // Setting the unlocked content at the beginning of the game.
 let isUpgradeClickUnlocked = false;
 let isAutoClickerUnlocked = false;
+let isSuperClickerUnlocked = false;
 
 
 /* This is in here to round the clickNumber and avoid the weird Javascript
@@ -67,7 +74,11 @@ function unlockCheck() {
     if (clickNumber >= 20 && isUpgradeClickUnlocked == false) {
         isUpgradeClickUnlocked = true;
         document.getElementById("upgrade-click").className += " reveal";
-    } 
+    }
+    if (clickNumber >= 100 && isSuperClickerUnlocked == false) {
+        isSuperClickerUnlocked = true;
+        document.getElementById("super-clicker").className += " reveal";
+    }
 }
 
 // Checks if the player has enough clicks to buy an item in the shop.
@@ -111,6 +122,19 @@ function buyAutoClicker() {
         autoClickStrength += .1 ;
         autoClicker.cost *= 2;
         document.getElementById("cost-auto-clicker").innerHTML = autoClicker.cost;
+        display();
+    }
+}
+
+document.getElementById("buy-super-clicker").addEventListener("click", buySuperClicker);
+function buySuperClicker() {
+    if (clickNumber >= autoClicker.cost) {
+        clickNumber = truncate(clickNumber-autoClicker.cost);
+        superClicker.inv += 1;
+        document.getElementById("inv-super-clicker").innerHTML = superClicker.inv;
+        autoClickStrength += 1 ;
+        superClicker.cost *= 2;
+        document.getElementById("cost-super-clicker").innerHTML = superClicker.cost;
         display();
     }
 }

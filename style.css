@@ -59,12 +59,10 @@ body {
 
 /* Features not yet unlocked are hidden in the store when the game begins.
 After they are unlocked, they get the .reveal class, which will allow them to fade in. */
-.upgrade-click,
-.auto-clicker {
+.store-item {
     display: none;
 }
-.upgrade-click a,
-.auto-clicker a {
+.store-item a {
     color: #AAA;
     border: 3px solid #AAA;
 }
